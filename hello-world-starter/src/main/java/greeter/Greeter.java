@@ -1,13 +1,14 @@
 package greeter;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class Greeter {
 
-	@Autowired
-	private GreeterProperties properties;
+	private String greeting;
+
+	public Greeter(String greeting) {
+		this.greeting = greeting;
+	}
 
 	public String greet(String name) {
-		return String.format("%s %s%n", properties.getGreeting(), name);
+		return String.format("%s %s%n", this.greeting, name);
 	}
 }

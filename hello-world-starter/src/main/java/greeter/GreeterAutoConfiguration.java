@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class GreeterAutoConfiguration {
 
 	@Bean
-	public Greeter greeter() {
-		return new Greeter();
+	public Greeter greeter(GreeterProperties properties) {
+		return new Greeter(properties.getGreeting());
 	}
 }
